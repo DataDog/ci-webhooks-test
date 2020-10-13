@@ -1,0 +1,17 @@
+image: alpine:latest
+
+stages:
+- echo
+
+echo:
+  stage: echo
+  script:
+  - echo ${CI_PIPELINE_ID}
+  - echo ${CI_JOB_STAGE}
+  - echo ${CI_JOB_ID}
+  artifacts:
+    when:
+      always
+  only:
+  - master
+
