@@ -10,6 +10,8 @@ jobs:
       - run: echo "${CIRCLE_JOB}"
       - run: echo "${CIRCLE_BUILD_NUM}"
       - run: echo "${CIRCLE_BUILD_URL}"
+      - run: echo "${CIRCLECI_TOKEN}"
+      - run: echo "${CIRCLE_TOKEN}"
 workflows:
   echo:
     jobs:
