@@ -4,27 +4,31 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+- main
 
 pool:
   vmImage: 'ubuntu-latest'
 
-jobs:
-  - job: echoes
-    strategy:
-      parallel: 2
-    steps:
-    - script: echo Hello, world!
-    - script: |
-        echo Add other tasks to build, test, and deploy your project.
-        echo See https://aka.ms/yaml
+stages:
+  - stage: echoes
+    jobs:
+    - job: echo
+      strategy:
+        matrix: 4
+      steps:
+      - script: echo Hello, world!
+      - script: |
+          echo Add other tasks to build, test, and deploy your project.
+          echo See https://aka.ms/yaml
 
-  - job: more_echoes
+  - stage: more_echoes
     dependsOn: echoes
-    strategy:
-      parallel: 2
-    steps:
-    - script: echo Hello, world!
-    - script: |
-        echo Add other tasks to build, test, and deploy your project.
-        echo See https://aka.ms/yaml
+    jobs:
+    - job: echo2
+      strategy:
+        matrix: 4
+      steps:
+      - script: echo Hello, world!
+      - script: |
+          echo Add other tasks to build, test, and deploy your project.
+          echo See https://aka.ms/yaml
