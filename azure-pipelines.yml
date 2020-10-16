@@ -14,7 +14,7 @@ stages:
     jobs:
     - job: echo
       strategy:
-        matrix: 4
+        parallel: 2
       steps:
       - script: echo Hello, world!
       - script: |
@@ -26,7 +26,7 @@ stages:
     jobs:
     - job: echo2
       strategy:
-        matrix: 4
+        parallel: 2
       steps:
       - script: echo Hello, world!
       - script: |
