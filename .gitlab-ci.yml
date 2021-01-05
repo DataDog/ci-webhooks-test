@@ -14,4 +14,11 @@ echo:
       always
   only:
   - master
-
+  
+allowed_fail:
+  stage: echo
+  script: 
+  - /bin/waaaaaaaat
+  allow_failure: true
+  only:
+  - master
