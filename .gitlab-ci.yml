@@ -13,7 +13,7 @@ echo:
     when:
       always
   only:
-  - master
+  - main
   
 allowed_fail:
   stage: echo
@@ -21,4 +21,4 @@ allowed_fail:
   - /bin/waaaaaaaat
   allow_failure: true
   only:
-  - master
+  - main
