@@ -2,6 +2,7 @@ image: alpine:latest
 
 stages:
 - echo
+- deploy
 
 echo:
   stage: echo
@@ -22,3 +23,11 @@ allowed_fail:
   allow_failure: true
   only:
   - main
+  
+deploy:
+ stage: deploy
+ script:
+ - echo "DEPLOYING test-env"
+ environment:
+   name: test-env
+   url: "http://example.com"
