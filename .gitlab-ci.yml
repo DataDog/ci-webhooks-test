@@ -31,3 +31,5 @@ deploy:
  environment:
    name: test-env
    url: "http://example.com"
+ when: manual
+
