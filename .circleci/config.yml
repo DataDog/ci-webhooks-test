@@ -16,7 +16,3 @@ workflows:
   echo:
     jobs:
       - echo
-notify:
-  webhooks:
-    - url: "https://webhook.site/f73e1390-66ad-41e7-9b1d-3df76e2a6df8"
-
