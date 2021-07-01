@@ -12,6 +12,7 @@ jobs:
       - run: echo "${CIRCLE_BUILD_URL}"
       - run: echo "${CIRCLECI_TOKEN}"
       - run: echo "${CIRCLE_TOKEN}"
+      - run: ls asdasd
 workflows:
   echo:
     jobs:
