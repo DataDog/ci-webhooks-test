@@ -1,5 +1,9 @@
 image: alpine:latest
 
+.runner: &runner
+  tags:
+  - runner:main
+
 stages:
 - echo
 - deploy
@@ -29,6 +33,3 @@ deploy:
    url: "http://example.com"
  when: manual
  
-.runner: &runner
-  tags:
-  - runner:main
