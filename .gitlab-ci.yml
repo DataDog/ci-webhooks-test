@@ -5,26 +5,22 @@ stages:
 - deploy
 
 echo:
+  <<: *runner
   stage: echo
   script:
   - echo ${CI_PIPELINE_ID}
   - echo ${CI_JOB_STAGE}
   - echo ${CI_JOB_ID}
-  artifacts:
-    when:
-      always
-  only:
-  - main
   
 allowed_fail:
+  <<: *runner
   stage: echo
   script: 
   - /bin/waaaaaaaat
   allow_failure: true
-  only:
-  - main
   
 deploy:
+ <<: *runner
  stage: deploy
  script:
  - echo "DEPLOYING test-env"
@@ -32,4 +28,7 @@ deploy:
    name: test-env
    url: "http://example.com"
  when: manual
-
+ 
+.runner: &runner
+  tags:
+  - runner:main
