@@ -4,7 +4,7 @@ git clone https://github.com/DataDog/datadog-ci.git
 
 cd datadog-ci
 
-git checkout 397c4b510cae3a9b57b686cb7fcc95513f530c1d
+git checkout 9ee549e0f26b932cf152ef2c2ff31cf38326f36f
 
 yarn install
 
