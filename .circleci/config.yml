@@ -12,7 +12,6 @@ jobs:
       - run: echo "${CIRCLE_BUILD_URL}"
       - run: echo "${CIRCLECI_TOKEN}"
       - run: echo "${CIRCLE_TOKEN}"
-      - run: npm install "git+https://github.com/DataDog/datadog-ci.git#397c4b510cae3a9b57b686cb7fcc95513f530c1d"
       - run:
           name: "Custom span"
           command: datadog-ci trace ./customspanschildren.sh
