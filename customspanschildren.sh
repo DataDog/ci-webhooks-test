@@ -1,7 +1,7 @@
 #!/bin/sh
 
-yarn launch trace --name "Say Hello" -- echo "Hello World"
+./dist/index.js trace --name "Say Hello" -- echo "Hello World"
 
-yarn launch trace sleep 5
+./dist/index.js trace sleep 5
 
-yarn launch trace --name "Fail" -- gfdjkghdfjk
+./dist/index.js trace --name "Fail" -- gfdjkghdfjk
