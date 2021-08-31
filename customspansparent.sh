@@ -8,4 +8,6 @@ git checkout edrevo/custom-spans
 
 yarn install
 
-yarn launch trace ../customspanschildren.sh
+yarn prepack
+
+./dist/index.js trace ../customspanschildren.sh
