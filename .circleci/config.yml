@@ -28,7 +28,7 @@ jobs:
       - run: apt-get -y install curl
       - datadog-agent/setup:
           agent_major_version: "7"
-          api_key: $DATADOG_API_KEY
+          api_key: ${DATADOG_API_KEY}
           site: datad0g.com
       - run: service datadog-agent status
       - run: pip3 install -r ./python_tests/requirements.txt
