@@ -1,9 +1,10 @@
 from unittest import TestCase
+from random import randrage
 
 
 class TestTrivial(TestCase):
     def test_pass(self):
         assert 4 == 4
     
-    def test_fail(self):
-        assert 3 == 1
+    def test_flaky(self):
+        assert randrange(10) > 5
