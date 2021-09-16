@@ -28,7 +28,7 @@ jobs:
       - run: apt-get -y install curl
       - datadog-agent/setup:
           agent_major_version: "7"
-          api_key: "${TEST_VALUE}"
+          api_key: TEST_VALUE
           site: datad0g.com
       - run: service datadog-agent status
       - run: cat /etc/datadog-agent/datadog.yaml
