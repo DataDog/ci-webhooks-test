@@ -1,7 +1,7 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 orbs:
-  datadog-agent: datadog/agent@dev:ce9bf23
+  datadog-agent: datadog/agent@dev:db0437e
 jobs:
   echo:
     docker:
@@ -30,6 +30,8 @@ jobs:
           dd_agent_major_version: "7"
           dd_api_key: ${DATADOG_API_KEY}
           dd_site: datad0g.com
+      - run: pip3 install -r ./python_tests/requirements.txt
+      - run: DD_ENV=ci DD_SERVICE=carlos-test pytest --ddtrace
       - datadog-agent/stop
         
 workflows:
