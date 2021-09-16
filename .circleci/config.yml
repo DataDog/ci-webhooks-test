@@ -30,7 +30,7 @@ jobs:
           agent_major_version: "7"
           api_key: $DATADOG_API_KEY
           site: datad0g.com
-      - run: sudo service datadog-agent status
+      - run: service datadog-agent status
       - run: pip3 install -r ./python_tests/requirements.txt
       - run: DD_ENV=carlos-test DD_SERVICE=carlos-testing pytest python_tests/ --ddtrace
       - run:
