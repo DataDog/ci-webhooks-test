@@ -26,7 +26,6 @@ jobs:
       - checkout
       - run: apt-get update -y
       - run: apt-get -y install curl
-      - run: echo "${TEST_VALUE}"
       - datadog-agent/setup:
           agent_major_version: "7"
           api_key: "${TEST_VALUE}"
