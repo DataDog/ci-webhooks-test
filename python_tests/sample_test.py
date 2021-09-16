@@ -1,5 +1,9 @@
-def inc(x):
-    return x + 1
+from unittest import TestCase
 
-def test_answer():
-    assert inc(3) == 4
+
+class TestTrivial(TestCase):
+    def test_pass(self):
+        assert 4 == 4
+    
+    def test_fail(self):
+        assert 3 == 1
