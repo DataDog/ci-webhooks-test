@@ -1,5 +1,5 @@
 from unittest import TestCase
-from random import randrage
+from random import randrange
 
 
 class TestTrivial(TestCase):
