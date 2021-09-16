@@ -21,7 +21,7 @@ jobs:
             DATADOG_SITE: datad0g.com
   agent-tester:
     docker:
-      - image: python:3.9.7-alpine
+      - image: python:3.9.7-buster
     steps:
       - checkout
       - run: apt-get update -y
