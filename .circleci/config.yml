@@ -20,9 +20,7 @@ jobs:
           environment:
             DATADOG_SITE: datad0g.com
   agent-tester:
-    when:
-        condition:
-          equal: [ main, << pipeline.git.branch >> ]
+
     docker:
       - image: python:3.9.7-buster
     steps:
@@ -42,6 +40,9 @@ workflows:
     jobs:
       - echo
   orb-test:
+    when:
+        condition:
+          equal: [ main, << pipeline.git.branch >> ]
     jobs:
       - agent-tester
     
