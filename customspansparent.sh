@@ -8,4 +8,4 @@ yarn install
 
 yarn prepack
 
-./dist/index.js trace ../customspanschildren.sh
+./dist/index.js trace --tags foo:bar --name "🚀" ../customspanschildren.sh
