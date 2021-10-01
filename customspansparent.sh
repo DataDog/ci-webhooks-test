@@ -2,9 +2,9 @@
 
 git clone https://github.com/DataDog/datadog-ci.git
 
-git checkout edrevo/capture-error-message
-
 cd datadog-ci
+
+git checkout edrevo/capture-error-message
 
 yarn install
 
