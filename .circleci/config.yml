@@ -20,9 +20,8 @@ jobs:
           environment:
             DATADOG_SITE: datad0g.com
   agent-tester:
-
     docker:
-      - image: python:3.9.7-buster
+      - image: ubuntu:18.04
     steps:
       - checkout
       - run: apt-get update -y
