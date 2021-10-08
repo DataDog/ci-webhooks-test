@@ -25,12 +25,12 @@ jobs:
     steps:
       - checkout
       - run: apt-get update -y
-      - run: apt-get -y install curl python3.6 python3-pip
+      - run: apt-get -y install curl python3.8
       - datadog-agent/setup:
           agent_major_version: "7"
           api_key: DATADOG_API_KEY
           site: datad0g.com
-      - run: pip3 install -r ./python_tests/requirements.txt
+      - run: python3.7 -m pip install -r ./python_tests/requirements.txt
       - run: DD_ENV=carlos-test DD_SERVICE=carlos-testing pytest python_tests/ --ddtrace
       - datadog-agent/stop
         
