@@ -6,4 +6,4 @@
 
 ./dist/index.js trace --name "Fail" -- gfdjkghdfjk
 
-./dist/index.js trace --name "Fail afain" -- ls -3
+./dist/index.js trace --name "Fail again" -- ls -3
