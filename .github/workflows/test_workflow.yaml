@@ -1,0 +1,9 @@
+name: Webhooks Test GitHub Actions
+on: [push]
+
+jobs:
+  log-a-lot:
+    name: Logs A Lot
+    runs-on: ubuntu-latest
+    steps:
+      - run: for ((n=0; n < 1000; n++)); echo "Hello"; done
