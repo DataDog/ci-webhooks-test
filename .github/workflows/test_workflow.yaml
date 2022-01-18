@@ -17,6 +17,7 @@ jobs:
         options: >-
           --name datadog-agent
     steps:
+      - uses: ./github/actions/stop-agent
       - uses: actions/checkout@v2
       - run: |
           git fetch --prune --unshallow
@@ -31,6 +32,3 @@ jobs:
       - name: Test with pytest
         run: |
           DD_ENV=carlos-test DD_SERVICE=carlos-testing pytest python_tests/ --ddtrace
-      - name: Stop Agent
-        run: docker exec -i datadog-agent agent stop
-        if: always()
