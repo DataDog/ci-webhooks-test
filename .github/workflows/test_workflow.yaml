@@ -31,3 +31,4 @@ jobs:
           DD_ENV=carlos-test DD_SERVICE=carlos-testing DD_AGENT_HOST=datadog-agent pytest python_tests/ --ddtrace
       - name: Sleep
         run: sleep 10
+        if: always()
