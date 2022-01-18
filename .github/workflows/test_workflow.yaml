@@ -4,23 +4,15 @@ on: [push]
 jobs:
   container-job:
     runs-on: ubuntu-latest
-    services:
-      datadog-agent:
-        image: gcr.io/datadoghq/agent:latest
-        ports:
-          - 8126:8126
-        env:
-          DD_API_KEY: ${{ secrets.DD_API_KEY }}
-          DD_INSIDE_CI: "true"
-          DD_HOSTNAME: "none"
-          DD_SITE: "datad0g.com"
-        options: >-
-          --name datadog-agent
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/stop-agent
       - run: |
           git fetch --prune --unshallow
+      - name: Start agent
+        uses: ./.github/actions/datadog-agent
+        with:
+          apiKey: ${{ secrets.DD_API_KEY }}
+          site: "datad0g.com"
       - name: Set up Python 3.8
         uses: actions/setup-python@v1
         with:
