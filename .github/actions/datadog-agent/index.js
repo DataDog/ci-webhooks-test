@@ -23,6 +23,7 @@ const dockerRun = spawnSync('docker', [
     '-e', 'DD_INSIDE_CI=true',
     '-e', 'DD_HOSTNAME=none',
     '-e', `DD_SITE=${core.getInput('site', { required: true })}`,
+    '-p', '8126:8126',
     core.getInput('registryPath', { required: true }),
     ], { stdio: 'inherit' });
 
