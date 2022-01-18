@@ -17,8 +17,8 @@ jobs:
         options: >-
           --name datadog-agent
     steps:
-      - uses: ./github/actions/stop-agent
       - uses: actions/checkout@v2
+      - uses: ./github/actions/stop-agent
       - run: |
           git fetch --prune --unshallow
       - name: Set up Python 3.8
