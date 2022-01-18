@@ -32,7 +32,7 @@ jobs:
         run: |
           DD_ENV=carlos-test DD_SERVICE=carlos-testing pytest python_tests/ --ddtrace
       - name: Stop Agent
-        run: docker exec -it datadog-agent agent stop
+        run: docker exec -i datadog-agent agent stop
         if: always()
       - name: Sleep
         run: sleep 30
