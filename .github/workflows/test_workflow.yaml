@@ -5,14 +5,15 @@ jobs:
   container-job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: |
-          git fetch --prune --unshallow
-      - name: Start agent
-        uses: ./.github/actions/datadog-agent
+      - name: Datadog Agent
+        uses: DataDog/agent-github-action@v0.1.0
         with:
           apiKey: ${{ secrets.DD_API_KEY }}
           site: "datad0g.com"
+
+      - uses: actions/checkout@v2
+      - run: |
+          git fetch --prune --unshallow
       - name: Set up Python 3.8
         uses: actions/setup-python@v1
         with:
