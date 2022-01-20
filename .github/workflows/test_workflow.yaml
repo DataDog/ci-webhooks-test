@@ -8,9 +8,8 @@ jobs:
       - name: Datadog Agent
         uses: DataDog/agent-github-action@v0.1.0
         with:
-          apiKey: ${{ secrets.DD_API_KEY }}
-          site: "datad0g.com"
-
+          api_key: ${{ secrets.DD_API_KEY }}
+          datadog_site: "datad0g.com"
       - uses: actions/checkout@v2
       - run: |
           git fetch --prune --unshallow
