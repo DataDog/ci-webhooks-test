@@ -5,7 +5,7 @@ jobs:
   container-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Datadog Agent
+      - name: Datadog Agent Setup
         uses: DataDog/agent-github-action@v0
         with:
           api_key: ${{ secrets.DD_API_KEY }}
