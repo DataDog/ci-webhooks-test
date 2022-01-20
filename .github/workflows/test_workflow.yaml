@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Datadog Agent Setup
-        uses: DataDog/agent-github-action@v0
+        uses: DataDog/agent-github-action@v1
         with:
           api_key: ${{ secrets.DD_API_KEY }}
           datadog_site: "datad0g.com"
