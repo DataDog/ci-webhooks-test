@@ -1,0 +1,7 @@
+agents:
+  queue: "carlos"
+
+steps:
+  - command: go version
+    concurrency_group: buildkite-sample/version
+    concurrency: 2
