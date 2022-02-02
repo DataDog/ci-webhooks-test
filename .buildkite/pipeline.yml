@@ -5,3 +5,11 @@ steps:
   - command: go version
     concurrency_group: buildkite-sample/version
     concurrency: 2
+  - command: go clean -testcache
+  - command: gotestsum --format testname --junitfile test.xml
+    retry:
+      automatic:
+        - exit_status: '*'
+          limit: 3
+  - command: datadog-ci junit upload --service "carlos-test" test.xml 
+    artifact_paths: test.xml
