@@ -3,7 +3,7 @@
 set +e
 
 attempts=0
-$SUDO datadog-agent health
+sudo datadog-agent health
 exit_code=$?
 
 until [[ $attempts -ge 50 ||  $exit_code -eq 0 ]]; do
@@ -12,7 +12,7 @@ until [[ $attempts -ge 50 ||  $exit_code -eq 0 ]]; do
     echo "Waiting for agent to start up sleeping for ${sleep_time} seconds"
     sleep $sleep_time
 
-    $SUDO datadog-agent health
+    sudo datadog-agent health
     exit_code=$?
 done
 
