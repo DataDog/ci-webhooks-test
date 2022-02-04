@@ -42,10 +42,10 @@ jobs:
       DD_SITE: datad0g.com
     steps:
       - checkout
+      - run: apt-get update -y
+      - run: apt-get -y install curl
       - datadog-agent/setup:
           site: datad0g.com
-      - run: apt-get update -y
-      - run: apt-get -y install curl python3.8 python3-pip
       - run: pip3 install --upgrade pip
       - run: pip3 install -r ./python_tests/requirements.txt
       - run: DD_ENV=carlos-test DD_SERVICE=carlos-testing pytest python_tests/ --ddtrace
