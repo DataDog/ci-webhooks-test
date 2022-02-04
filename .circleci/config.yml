@@ -31,7 +31,7 @@ jobs:
       - run: pip3 install --upgrade pip
       - datadog-agent/setup:
           site: datad0g.com
-          api_key: TEST_VALUE
+      - run: .circleci/wait_for_agent.sh
       - run: pip3 install -r ./python_tests/requirements.txt
       - run: DD_ENV=carlos-test DD_SERVICE=carlos-testing pytest python_tests/ --ddtrace
       - datadog-agent/stop
