@@ -28,3 +28,7 @@ func TestFlaky(t *testing.T) {
 		t.Fatalf("Bad luck value was: %d", n)
 	}
 }
+
+func TestAlwaysFail(t *testing.T) {
+	t.Fail()
+}
