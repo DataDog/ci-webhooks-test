@@ -34,7 +34,8 @@ jobs:
       - run: pip3 install -r ./python_tests/requirements.txt
       - run: DD_ENV=carlos-test DD_SERVICE=carlos-testing pytest python_tests/ --ddtrace
       - datadog-agent/stop
-   agent-tester-debian:
+  
+  agent-tester-debian:
     docker:
       - image: debian:latest
     environment:
@@ -47,8 +48,8 @@ jobs:
       - datadog-agent/setup:
           site: datad0g.com
       - run: pip3 install -r ./python_tests/requirements.txt
-      - run: DD_ENV=carlos-test-debian DD_SERVICE=carlos-testing pytest python_tests/ --ddtrace
-      - datadog-agent/stop
+      - run: DD_ENV=carlos-test DD_SERVICE=carlos-testing pytest python_tests/ --ddtrace
+      - datadog-agent/stop 
 workflows:
   echo:
     jobs:
@@ -58,5 +59,6 @@ workflows:
         condition:
           equal: [ main, << pipeline.git.branch >> ]
     jobs:
-      - agent-tester
+      - agent-tester-ubuntu
+      - agent-tester-debian
     
