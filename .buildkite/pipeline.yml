@@ -4,16 +4,6 @@ agents:
 steps:
   - command: go version
     label: Go version
-    concurrency_group: buildkite-sample/version
-    concurrency: 2
-  - command: go clean -testcache
-    label: Clean go test cache
-  - commands:
-     - gotestsum --format testname --junitfile test.xml
-     - datadog-ci junit upload --service "carlos-test" test.xml 
+  - commands: .buildkite/run_buildkite_test.sh
     label: run tests
     artifact_paths: test.xml
-    retry:
-      automatic:
-        - exit_status: '*'
-          limit: 3
