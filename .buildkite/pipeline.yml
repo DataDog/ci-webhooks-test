@@ -7,3 +7,4 @@ steps:
   - commands: .buildkite/run_buildkite_test.sh
     label: run tests
     artifact_paths: test.xml
+  - command: buildkite-agent meta-data set "ci.team" "ciapp"
