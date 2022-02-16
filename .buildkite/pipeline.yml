@@ -2,7 +2,7 @@ agents:
   queue: "carlos"
 
 steps:
-  - command: buildkite-agent meta-data set "dd_tags.size" 5
+  - command: buildkite-agent meta-data set "dd_tags.buildkite.size" 5
   - command: go version | tr -d '\n' | buildkite-agent meta-data set "dd.go.version"
     label: Go version
   - commands: .buildkite/run_buildkite_test.sh
