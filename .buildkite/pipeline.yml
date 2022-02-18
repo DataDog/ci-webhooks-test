@@ -9,6 +9,3 @@ steps:
   - command: .buildkite/run_buildkite_test.sh
     label: run tests
     artifact_paths: test.xml
-  - command: ls -l test.xml
-    label: Junit size
-
