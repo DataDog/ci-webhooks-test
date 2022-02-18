@@ -29,6 +29,6 @@ func TestFlaky(t *testing.T) {
 	}
 }
 
-func TestAlwaysFail(t *testing.T) {
-	t.Fail()
+func TestSlow(t *testing.T) {
+	time.Sleep(5 * time.Second)
 }
