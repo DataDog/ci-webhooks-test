@@ -12,6 +12,7 @@ func TestAdd(t *testing.T) {
 	tests := [][]int{
 		{1, 1, 2},
 		{1, -1, 0},
+		{1, 3, 4},
 		{-1, -5, -6},
 	}
 
