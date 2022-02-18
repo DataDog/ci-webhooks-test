@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 echo "Clearing test cache"
 go clean -testcache
