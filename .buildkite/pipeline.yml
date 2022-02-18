@@ -6,8 +6,9 @@ steps:
     steps:
       - command: go version | tr -d '\n' | buildkite-agent meta-data set "dd_tags.go.version"
         label: Go version
-  - commands: .buildkite/run_buildkite_test.sh
+  - command: .buildkite/run_buildkite_test.sh
     label: run tests
     artifact_paths: test.xml
   - command: ls -l test.xml | awk '{print $4}' | tr -d '\n' | buildkite-agent meta-data set "dd_metrics.junit.size"
+    label: Junit size
 
