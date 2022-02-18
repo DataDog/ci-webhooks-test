@@ -16,7 +16,7 @@ set -x
 echo "$(ls -l test.xml | awk '{print $5}' | tr -d '\n')"
 size=$(ls -l test.xml | awk '{print $5}' | tr -d '\n')
 
-echo "$size"
+buildkite-agent meta-data set "dd_metrics.buildkite.junit_size_bytes" $size
 
 echo "Exiting with ${exit_code}"
 exit ${exit_code}
