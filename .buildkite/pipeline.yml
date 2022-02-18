@@ -7,7 +7,7 @@ steps:
       - command: go version | tr -d '\n' | buildkite-agent meta-data set "dd_tags.go.version"
         label: Go version
       - command: buildkite-agent meta-data set "dd_metrics.buildkite.number" "33"
-        label: Go version
+        label: Random metric
   - command: .buildkite/run_buildkite_test.sh
     label: run tests
     artifact_paths: test.xml
