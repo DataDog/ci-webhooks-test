@@ -10,6 +10,6 @@ set -e
 echo "Uploading XML to Data Dog"
 datadog-ci junit upload --service carlos-test test.xml
 
-ls -l test.xml
+echo `ls -l test.xml`
 echo "Exiting with ${exit_code}"
 exit ${exit_code}
