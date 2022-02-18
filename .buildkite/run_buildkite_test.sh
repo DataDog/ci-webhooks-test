@@ -13,7 +13,7 @@ echo "Uploading XML to Data Dog"
 datadog-ci junit upload --service carlos-test test.xml
 
 set -x
-echo "$(ls -l test.xml | awk '{print $5}'"
+echo "$(ls -l test.xml | awk '{print $5}' | tr -d '\n')"
 size=$(ls -l test.xml | awk '{print $5}' | tr -d '\n')
 
 echo "$size"
