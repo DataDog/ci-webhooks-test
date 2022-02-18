@@ -9,6 +9,6 @@ steps:
   - command: .buildkite/run_buildkite_test.sh
     label: run tests
     artifact_paths: test.xml
-  - command: ls -l test.xml | awk "{print \$4}" | tr -d '\n' | buildkite-agent meta-data set "dd_metrics.junit.size"
+  - command: ls -l test.xml | awk '{print \$4}' | tr -d '\n' | buildkite-agent meta-data set "dd_metrics.junit.size"
     label: Junit size
 
