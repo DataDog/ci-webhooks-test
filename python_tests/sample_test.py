@@ -8,6 +8,9 @@ class TestTrivial(TestCase):
     
     def test_flaky(self):
         assert randrange(10) > 5
+        
+    def test_new_flaky(self):
+        assert randrange(10) > 5
     
     def test_fail(self):
         assert 5 == 7
