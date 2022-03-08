@@ -2,6 +2,7 @@ agents:
   queue: "carlos"
 
 steps:
+  - command: buildkite-agent meta-data set "dd_tags.test_tag" "hello"
   - group: ":partyparrot: Tags"
     steps:
       - command: go version | tr -d '\n' | buildkite-agent meta-data set "dd_tags.go.version"
@@ -11,3 +12,4 @@ steps:
   - command: .buildkite/run_buildkite_test.sh
     label: run tests
     artifact_paths: test.xml
+  - command: buildkite-agent meta-data set "dd_tags.test_tag" ""
