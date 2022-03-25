@@ -10,6 +10,7 @@ jobs:
         with:
           api_key: ${{ secrets.DD_API_KEY }}
           datadog_site: "datad0g.com"
+          extra_env: 'DD_APM_MAX_EPS=500,foo=bar'
       - uses: actions/checkout@v3
       - run: |
           git fetch --prune --unshallow
