@@ -1,0 +1,26 @@
+name: Webhooks Test GitHub Actions
+on: [push]
+
+jobs:
+  container-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Datadog Agent Setup
+        uses: DataDog/agent-github-action@carlos.gonzalez/allow-env-passthrough
+        with:
+          api_key: ${{ secrets.DD_API_KEY }}
+          datadog_site: "datad0g.com"
+      - uses: actions/checkout@v3
+      - run: |
+          git fetch --prune --unshallow
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r ./python_tests/requirements.txt
+      - name: Test with pytest
+        run: |
+          DD_ENV=carlos-test DD_SERVICE=carlos-testing pytest python_tests/ --ddtrace
