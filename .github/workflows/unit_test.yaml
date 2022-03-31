@@ -5,7 +5,7 @@ jobs:
   windows-job:
     runs-on: windows-2019
     steps:
-      - uses: DataDog/agent-github-action@v1.1.0
+      - uses: DataDog/agent-github-action@main
         with:
           api_key: ${{ secrets.DD_API_KEY }}
           datadog_site: "datad0g.com"
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Datadog Agent Setup
-        uses: DataDog/agent-github-action@carlos.gonzalez/allow-env-passthrough
+        uses: DataDog/agent-github-action@main
         with:
           api_key: ${{ secrets.DD_API_KEY }}
           datadog_site: "datad0g.com"
