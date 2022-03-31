@@ -2,13 +2,6 @@ name: Webhooks Test GitHub Actions
 on: [push, workflow_dispatch]
 
 jobs:
-  windows-job:
-    runs-on: windows-2019
-    steps:
-      - uses: DataDog/agent-github-action@main
-        with:
-          api_key: ${{ secrets.DD_API_KEY }}
-          datadog_site: "datad0g.com"
   container-job:
     runs-on: ubuntu-latest
     steps:
