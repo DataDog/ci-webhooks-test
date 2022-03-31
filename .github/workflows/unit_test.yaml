@@ -31,4 +31,4 @@ jobs:
           pip install -r ./python_tests/requirements.txt
       - name: Test with pytest
         run: |
-          DD_ENV=carlos-test DD_SERVICE=carlos-testing pytest python_tests/ --ddtrace
+          DD_ENV=drodriguezhdez DD_SERVICE=webhooks-tests pytest python_tests/ --ddtrace
