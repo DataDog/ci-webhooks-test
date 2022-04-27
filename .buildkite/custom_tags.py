@@ -33,7 +33,8 @@ def main():
         level = 1
     else:
         sys.exit(1)
-
+    
+    print(f'Tags: {sys.argv[2:]}')
     tags = {key_val[0]: key_val[1] for key_val in map(lambda x: x.split(":", 1), sys.argv[2:])}
     send_tags(level, get_buildkite_env(), tags, "buildkite")
 
