@@ -2,7 +2,7 @@ agents:
   queue: "carlos"
 
 steps:
-  - command: python3 .buildkite/custom_tags.py pipeline go.version:`go version`
+  - command: python3 .buildkite/custom_tags.py pipeline "go.version:`go version`"
   - command: go version
     label: Go version
   - commands: .buildkite/run_buildkite_test.sh
