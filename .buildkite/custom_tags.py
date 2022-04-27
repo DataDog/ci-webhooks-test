@@ -12,7 +12,7 @@ def send_tags(level, ci_env, tags, provider):
             "type": "ci_custom_tag",
             "attributes": {
                 "provider": provider,
-                "level": level,
+                "ci_level": level,
                 "ci_env": ci_env,
                 "tags": tags,
             },
