@@ -3,7 +3,7 @@ import sys
 import requests
 
 def get_buildkite_env():
-    return {k: v for k, v in os.environ if k.startswith("BUILDKITE_") and ("KEY" not in k or "TOKEN" not in k or "SECRET" not in k)}
+    return {k: v for k, v in os.environ.items() if k.startswith("BUILDKITE_") and ("KEY" not in k or "TOKEN" not in k or "SECRET" not in k)}
 
 def send_tags(level, ci_env, tags, provider):
     paylaod = {
