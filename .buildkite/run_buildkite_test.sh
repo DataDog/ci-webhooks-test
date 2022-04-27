@@ -1,3 +1,6 @@
+echo "Adding tags"
+python3 .buildkite/custom_tags.py job "go.version:`go version`" "gotestsum.version:`gotestsum --version`"
+
 echo "Clearing test cache"
 go clean -testcache
 
