@@ -20,7 +20,7 @@ def send_tags(level, ci_env, tags, provider):
     }
 
     res = requests.post("https://dd.datad0g.com/api/v2/ci/pipeline/tags", json=paylaod,
-        headers={"DD-API-KEY": os.environ["DD_API_KEY"], "DD-APPLICATION-KEY": os.environ["DD_APP_KEY"]})
+        headers={"DD-API-KEY": os.environ["DD_API_KEY"]})
     if res.status_code >= 300:
         print(f"Error: {res.json()}")
         res.raise_for_status()
