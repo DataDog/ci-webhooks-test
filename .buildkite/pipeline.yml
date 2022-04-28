@@ -2,8 +2,10 @@ agents:
   queue: "carlos"
 
 steps:
-  - command: python3 .buildkite/custom_tags.py pipeline "team:ci-app"
+  - command: python3 .buildkite/custom_tags.py tags pipeline "team:ci-app"
     label: pipeline custom tags
+  - commands: .buildkite/build_test.sh
+    label: build tests
   - commands: .buildkite/run_buildkite_test.sh
     label: run tests
     artifact_paths: test.xml
