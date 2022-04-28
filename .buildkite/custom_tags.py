@@ -61,13 +61,15 @@ def main():
     else:
         sys.exit(1)
 
-    print(f'{sys.argv[1]}: {sys.argv[3:]}')
-    tags = {key_val[0]: key_val[1] for key_val in map(lambda x: x.split(":", 1), sys.argv[3:])}
     tags_or_metrics = sys.argv[1]
     if tags_or_metrics == "tags":
+        tags = {key_val[0]: key_val[1] for key_val in map(lambda x: x.split(":", 1), sys.argv[3:])}
+        print(f'Tags: {tags}')
         send_tags(level, get_buildkite_env(), tags, "buildkite")
     elif tags_or_metrics == "metrics":
-        send_metrics(level, get_buildkite_env(), tags, "buildkite")
+        metrics = {key_val[0]: float(key_val[1].strip()) for key_val in map(lambda x: x.split(":", 1), sys.argv[3:])}
+        print(f'Metrics: {metrics}')
+        send_metrics(level, get_buildkite_env(), metrics, "buildkite")
     else:
         sys.exit(1)
 
