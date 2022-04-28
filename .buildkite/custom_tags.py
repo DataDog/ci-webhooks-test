@@ -9,7 +9,7 @@ def get_buildkite_env():
 def send_metrics(level, ci_env, metrics, provider):
     paylaod = {
         "data": {
-            "type": "ci_custom_tag",
+            "type": "ci_custom_metric",
             "attributes": {
                 "provider": provider,
                 "ci_level": level,
