@@ -24,11 +24,7 @@ func TestAdd(t *testing.T) {
 
 func TestFlaky(t *testing.T) {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	if n := r.Intn(100); n > 75 {
+	if n := r.Intn(100); n > 66 {
 		t.Fatalf("Bad luck value was: %d", n)
 	}
-}
-
-func TestAlwaysFail(t *testing.T) {
-	t.Fail()
 }
