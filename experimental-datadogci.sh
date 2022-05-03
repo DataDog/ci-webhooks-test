@@ -2,4 +2,5 @@ git clone -b carlos.gonzalez/add-custom-tags-command https://github.com/DataDog/
 
 cd datadog-ci
 
+yarn install
 yarn launch tag --level pipeline --tags team:ci-app
