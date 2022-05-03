@@ -7,4 +7,4 @@ jobs:
     steps:
       - run: echo "Hello world!"
       - uses: actions/checkout@v3
-      - run: experimental-datadogci.sh
+      - run: ./experimental-datadogci.sh
