@@ -4,6 +4,10 @@ on: [push]
 jobs:
   container-job:
     runs-on: ubuntu-latest
+    env:
+      DATADOG_API_KEY: ${{ secrets.DD_API_KEY }}
+      DATADOG_SITE: datad0g.com
+      DD_SITE: datad0g.com
     steps:
       - run: echo "Hello world!"
       - uses: actions/checkout@v3
