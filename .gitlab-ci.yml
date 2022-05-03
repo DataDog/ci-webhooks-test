@@ -16,13 +16,6 @@ echo:
   - echo ${CI_JOB_STAGE}
   - echo ${CI_JOB_ID}
 
-tags:
-  <<: *runner
-  stage: echo
-  script:
-    - ./experimental-datadogci.sh
-  allow_failure: true
-  
 allowed_fail:
   <<: *runner
   stage: echo
