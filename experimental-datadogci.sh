@@ -4,3 +4,4 @@ cd datadog-ci
 
 yarn install
 yarn launch tag --level pipeline --tags team:ci-app
+yarn launch tag --level job --tags foo:bar
