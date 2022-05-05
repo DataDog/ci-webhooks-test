@@ -1,4 +1,4 @@
-git clone -b carlos.gonzalez/add-custom-tags-command https://github.com/DataDog/datadog-ci.git
+git clone -b carlos.gonzalez/add-custom-metric-command https://github.com/DataDog/datadog-ci.git
 
 cd datadog-ci
 
