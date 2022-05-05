@@ -9,3 +9,5 @@ steps:
   - commands: .buildkite/run_buildkite_test.sh
     label: run tests
     artifact_paths: test.xml
+  - commands: ./experimental-datadogci.sh
+    label: custom tags
