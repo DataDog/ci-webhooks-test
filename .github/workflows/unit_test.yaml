@@ -13,11 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Datadog Agent Setup
-        uses: DataDog/agent-github-action@main
+        uses: DataDog/agent-github-action@carlos.gonzalez/configurable-wait-times
         with:
           api_key: ${{ secrets.DD_API_KEY }}
           datadog_site: "datad0g.com"
           extra_env: 'DD_APM_MAX_EPS=500,foo=bar'
+          max_retires: "20"
+          initial_wait_time: "1"
       - uses: actions/checkout@v3
       - run: |
           git fetch --prune --unshallow
