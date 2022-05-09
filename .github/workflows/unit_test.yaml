@@ -18,7 +18,7 @@ jobs:
           api_key: ${{ secrets.DD_API_KEY }}
           datadog_site: "datad0g.com"
           extra_env: 'DD_APM_MAX_EPS=500,foo=bar'
-          max_retries: "4"
+          max_retries: "5"
           initial_wait_time: "1"
       - uses: actions/checkout@v3
       - run: |
