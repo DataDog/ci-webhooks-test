@@ -2,7 +2,7 @@ agents:
   queue: "carlos"
 
 steps:
-  - trigger: Downstream
+  - trigger: downstream
     label: trigger
     build:
       message: "${BUILDKITE_MESSAGE}"
