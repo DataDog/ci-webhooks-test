@@ -2,6 +2,12 @@ agents:
   queue: "carlos"
 
 steps:
+  - trigger: Downstream
+    label: trigger
+    build:
+      message: "${BUILDKITE_MESSAGE}"
+      commit: "${BUILDKITE_COMMIT}"
+      branch: "${BUILDKITE_BRANCH}"
   - command: python3 .buildkite/custom_tags.py tags pipeline "team:ci-app"
     label: pipeline custom tags
   - commands: .buildkite/build_test.sh
