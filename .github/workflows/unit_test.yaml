@@ -44,6 +44,7 @@ jobs:
       - run: go install gotest.tools/gotestsum@latest
       - run: gotestsum --format testname --junitfile test.xml gotests
       - uses: datadog/junit-upload-github-action@v1
+        if: always()
         with:
             api-key: ${{ secrets.DD_API_KEY }}
             service: ci-webhooks-test-ci
