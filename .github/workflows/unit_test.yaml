@@ -47,4 +47,4 @@ jobs:
             service: ci-webhooks-test-ci
             env: ci-tests
             files: test.xml
-            datadog-site: datd0g.com
+            datadog-site: datad0g.com
