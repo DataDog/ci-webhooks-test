@@ -34,3 +34,19 @@ jobs:
       - name: Test with pytest
         run: |
           DD_ENV=carlos-test DD_SERVICE=carlos-testing pytest python_tests/ --ddtrace
+  go-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '>=1.17.0'
+      - run: go install gotest.tools/gotestsum@latest
+      - run: gotestsum --format testname --junitfile test.xml gotests
+      - uses: datadog/junit-upload-github-action@v1
+        with:
+            api-key: ${{ secrets.DD_API_KEY }}
+            service: ci-webhooks-test-ci
+            env: ci-tests
+            files: test.xml
+            datadog-site: datd0g.com
