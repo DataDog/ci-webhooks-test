@@ -2,15 +2,11 @@ name: Webhooks Test GitHub Actions
 on: [push, workflow_dispatch]
 
 jobs:
-  windows-job:
-    runs-on: windows-2019
-    steps:
-      - uses: DataDog/agent-github-action@main
-        with:
-          api_key: ${{ secrets.DD_API_KEY }}
-          datadog_site: "datad0g.com"
-  container-job:
-    runs-on: ubuntu-latest
+  agent-job:
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Datadog Agent Setup
         uses: DataDog/agent-github-action@v1.3
@@ -32,7 +28,10 @@ jobs:
         run: |
           DD_ENV=carlos-test DD_SERVICE=carlos-testing pytest python_tests/ --ddtrace
   go-tests:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-go@v3
@@ -45,6 +44,6 @@ jobs:
         with:
             api-key: ${{ secrets.DD_API_KEY }}
             service: ci-webhooks-test-ci
-            env: ci-tests
+            env: ci-tests-${{matrix.os}}
             files: test.xml
             datadog-site: datad0g.com
