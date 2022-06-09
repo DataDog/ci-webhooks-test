@@ -28,7 +28,7 @@ func TestFlaky(t *testing.T) {
 		t.Fatalf("Bad luck value was: %d", n)
 	}
 }
-func TestNewFlaky(t *testing.T) {
+func TestNewFlaky1(t *testing.T) {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	if n := r.Intn(100); n > 50 {
 		t.Fatalf("Bad luck value was: %d", n)
