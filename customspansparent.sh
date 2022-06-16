@@ -1,11 +1,5 @@
 #!/bin/sh
 
-git clone https://github.com/DataDog/datadog-ci.git
+yarn global add @datadog/datadog-ci
 
-cd datadog-ci
-
-yarn install
-
-yarn prepack
-
-./dist/index.js trace --tags foo:bar --name "🚀" ../customspanschildren.sh
+datadog-ci trace --tags foo:bar --name "🚀" ../customspanschildren.sh
