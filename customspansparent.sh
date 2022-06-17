@@ -2,4 +2,4 @@
 
 yarn global add @datadog/datadog-ci
 
-datadog-ci trace --tags foo:bar --name "🚀" ../customspanschildren.sh
+datadog-ci trace --tags foo:bar --name "🚀" -- echo "Ship it"
