@@ -48,5 +48,5 @@ jobs:
             env: ci-tests-${{matrix.os}}
             files: test.xml
             datadog-site: datad0g.com
-      - run: datadog-ci tag --level pipeline --tags team:backend
-      - run: datadog-ci metric --level pipeline --metrics "bundle.size:45783"
+      - run: DD_API_KEY=${{ secrets.DD_API_KEY }} DATADOG_SITE=datad0g.com datadog-ci tag --level pipeline --tags team:backend
+      - run: DD_API_KEY=${{ secrets.DD_API_KEY }} DATADOG_SITE=datad0g.com datadog-ci metric --level pipeline --metrics "bundle.size:45783"
