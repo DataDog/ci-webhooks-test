@@ -47,3 +47,5 @@ jobs:
             env: ci-tests-${{matrix.os}}
             files: test.xml
             datadog-site: datad0g.com
+      - run: datadog-ci tag --level pipeline team:backend
+      - run: datadog-ci metric --level pipeline bundle.size 45783
