@@ -39,6 +39,7 @@ jobs:
           go-version: '>=1.17.0'
       - run: go install gotest.tools/gotestsum@latest
       - run: gotestsum --junitfile test.xml ./gotests
+        continue-on-error: true
       - uses: datadog/junit-upload-github-action@v1
         if: always()
         with:
