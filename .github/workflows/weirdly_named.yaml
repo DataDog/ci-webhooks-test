@@ -1,0 +1,9 @@
+name: TEST!
+on: [push]
+
+jobs:
+  not-a-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: fake
+        run: echo 'whatever'
