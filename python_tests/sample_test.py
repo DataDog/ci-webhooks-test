@@ -16,9 +16,6 @@ class TestTrivial(TestCase):
         else:
             assert randrange(10) > 5
     
-    def test_fail(self):
-        assert 5 == 7
-    
     def test_1(self):
         assert my_func() == 4
    
