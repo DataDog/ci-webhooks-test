@@ -9,6 +9,6 @@ steps:
       commit: "${BUILDKITE_COMMIT}"
       branch: "${BUILDKITE_BRANCH}"
   - commands: pip3 install -r ./python_tests/requirements.txt
-    label: Pip :baby_chick:
+    label: "Pip :baby_chick:"
   - commands: pytest python_tests/ 
-    label: :pytest: pytest
+    label: ":pytest: pytest"
