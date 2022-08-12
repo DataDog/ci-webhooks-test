@@ -22,3 +22,7 @@ class TestTrivial(TestCase):
     def test_1(self):
         assert my_func() == 4
    
+
+class TestPass(TestCase):
+    def test_passes(self):
+        assert 6 == 6
