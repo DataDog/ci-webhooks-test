@@ -8,12 +8,7 @@ steps:
       message: "${BUILDKITE_MESSAGE}"
       commit: "${BUILDKITE_COMMIT}"
       branch: "${BUILDKITE_BRANCH}"
-  - command: python3 .buildkite/custom_tags.py tags pipeline "team:ci-app"
-    label: pipeline custom tags
-  - commands: .buildkite/build_test.sh
-    label: build tests
-  - commands: .buildkite/run_buildkite_test.sh
-    label: run tests
-    artifact_paths: test.xml
-  - commands: ./experimental-datadogci.sh
-    label: custom tags
+  - commands: pip3 install -r ./python_tests/requirements.txt
+    label: Pip :baby_chick:
+  - commands: pytest python_tests/ 
+    label: :pytest: pytest
