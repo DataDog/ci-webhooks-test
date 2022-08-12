@@ -1,3 +1,4 @@
 pytest
 cython
 ddtrace
+buildkite-test-collector
