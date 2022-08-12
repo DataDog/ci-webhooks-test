@@ -26,3 +26,6 @@ class TestTrivial(TestCase):
 class TestPass(TestCase):
     def test_passes(self):
         assert 6 == 6
+    
+    def this_also_passes(self):
+        assert 'a' == 'a'
