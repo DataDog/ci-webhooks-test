@@ -1,6 +1,6 @@
+import os
 from unittest import TestCase
 from random import randrange
-from exceptions import ValueError
 
 def my_func():
     raise ValueError
@@ -10,7 +10,11 @@ class TestTrivial(TestCase):
         assert 4 == 4
     
     def test_flaky(self):
-        assert randrange(10) > 5
+        build_num = os.getenv('BUILDKITE_BUILD_NUMBER')
+        if build_num:
+            assert int(build_num) % 2 == 0
+        else:
+            assert randrange(10) > 5
     
     def test_fail(self):
         assert 5 == 7
