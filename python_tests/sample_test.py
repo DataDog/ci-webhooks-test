@@ -15,6 +15,9 @@ class TestTrivial(TestCase):
             assert int(build_num) % 2 == 0
         else:
             assert randrange(10) > 5
+    
+    def test_fails(self):
+        assert 0 == 1
           
    
 
