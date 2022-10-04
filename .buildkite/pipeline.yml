@@ -1,5 +1,5 @@
 agents:
-  queue: "andrea"
+  queue: "ci-team"
 
 steps:
   - trigger: downstream
