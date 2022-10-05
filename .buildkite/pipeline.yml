@@ -2,12 +2,12 @@ agents:
   queue: "ci-team"
 
 steps:
-  - trigger: downstream
-    label: trigger
-    build:
-      message: "${BUILDKITE_MESSAGE}"
-      commit: "${BUILDKITE_COMMIT}"
-      branch: "${BUILDKITE_BRANCH}"
+#  - trigger: downstream
+#    label: trigger
+#    build:
+#      message: "${BUILDKITE_MESSAGE}"
+#      commit: "${BUILDKITE_COMMIT}"
+#      branch: "${BUILDKITE_BRANCH}"
   - commands: pip3 install -r ./python_tests/requirements.txt
     label: "Pip :baby_chick:"
   - block: ":rocket: Release!"
