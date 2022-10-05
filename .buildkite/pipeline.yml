@@ -4,7 +4,6 @@ agents:
 steps:
   - trigger: downstream
     label: trigger
-    async: true
     build:
       message: "${BUILDKITE_MESSAGE}"
       commit: "${BUILDKITE_COMMIT}"
