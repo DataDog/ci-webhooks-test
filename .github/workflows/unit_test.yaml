@@ -48,3 +48,7 @@ jobs:
             env: ci-tests-${{matrix.os}}
             files: test.xml
             datadog-site: datad0g.com
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: for i in {1..10000}; do echo "abcedfsafuiasfnoasdnfasbi"; done
